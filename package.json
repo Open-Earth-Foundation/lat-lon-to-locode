@@ -1,0 +1,11 @@
+{
+  "name": "lat-lon-to-locode",
+  "version": "0.1.0",
+  "description": "Convert a lat-lon pair to the closes un locode",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "evan@openearth.org",
+  "license": "Apache-2.0"
+}
