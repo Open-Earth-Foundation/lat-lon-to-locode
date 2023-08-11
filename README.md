@@ -23,7 +23,7 @@ node index.mjs 51.5074 -0.1278
 The code uses the UN/LOCODE database harmonized for OpenClimate. It's just
 a CSV with `locode`, `lat`, and `lon` columns. Lat and lon are integers representing the decimal value multiplied by 10000. For example, 51.5074 becomes 515074.
 
-It first loads this CSV into a `tiles` structure, mapping each locode into an ~100km^2 tile of data based on the lat and lon. It just takes the integer lat/lon, divides by 1000, and then makes a tile key of "lat,lon". Each tile is an array of matching rows.
+It first loads this CSV into a `tiles` structure, mapping each locode into a ~10kmx10km tile of data based on the lat and lon. It just takes the integer lat/lon, divides by 1000, and then makes a tile key of "lat,lon". Each tile is an array of matching rows.
 
 Then, it takes the decimal lat/lon you provide, and generates a key by multiplying by 10 and rounding. So 51.5074 becomes 515. It looks up the tile for that key, and also the 8 tiles adjacent to the key, getting a square about 30x30km. It then loops through all the rows in those tiles, and calculates the distance between the lat/lon you provided and the lat/lon in the row. It keeps track of the closest row, and returns that.
 
